@@ -172,6 +172,7 @@ fn find_solution(f: &mut Field) -> Option<Field> {
 /// в противном случае возвращает `None`.
 fn find_solution_parallel(mut f: Field) -> Option<Field> {
     // TODO: вам требуется изменить эту функцию.
+    std::thread::spawn(move || panic!("hello world"));
     find_solution(&mut f)
 }
 
