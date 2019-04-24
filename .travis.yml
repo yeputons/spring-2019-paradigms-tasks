@@ -33,5 +33,5 @@ script:
 - pushd task09/
 - diff -u <(cat src/*) <(clang-format -style=file src/*)
 - cmake . && make
-- valgrind --tool=memcheck --leak-check=full ./queue_test
+- valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all ./queue_test
 - popd
