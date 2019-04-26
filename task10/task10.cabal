@@ -10,7 +10,7 @@ build-type:          Simple
 library
     exposed-modules:     Basics, Robots
     build-depends:       base >=4.11
-    ghc-options:         -Wall -Werror -Wextra -fno-warn-incomplete-patterns
+--    ghc-options:         -Wall -Werror -Wextra -fno-warn-incomplete-patterns
     hs-source-dirs:      src
     default-language:    Haskell2010
 
