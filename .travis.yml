@@ -9,7 +9,7 @@ install:
 - sudo add-apt-repository ppa:deadsnakes/ppa -y # python3.7 is unavailable in Xenial
 - sudo apt-get update
 - sudo apt-get install python3.7 libgmp-dev libnuma-dev
-- curl https://raw.githubusercontent.com/haskell/ghcup/master/bootstrap-haskell -sSf | sh
+- curl https://raw.githubusercontent.com/haskell/ghcup/master/bootstrap-haskell -sSf | BOOTSTRAP_HASKELL_NONINTERACTIVE=1 sh
 - source "$HOME/.ghcup/env"
 - cabal new-install cabal-install
 - cabal new-update && cabal new-install --lib hspec tasty-hunit tasty-hspec QuickCheck
