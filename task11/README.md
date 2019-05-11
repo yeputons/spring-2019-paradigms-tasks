@@ -104,9 +104,14 @@
 
 # Советы
 
-1. Cabal может не пересобирать тесты, если вы меняете реализацию по умолчанию
+1. GHC версии 8.6.3 и ниже не пересобирает тесты, если вы меняете реализацию по умолчанию
    (т.е. `src/Map.hs`), поэтому при изменениях этого файла сначала делайте
-   `cabal new-clean` (см. [haskell/cabal#6045](https://github.com/haskell/cabal/issues/6045)).
+   `cabal new-clean` или собирайте
+   командой `cabal new-test --ghc-options=-fforce-recomp`
+   (см. `ghc --version` и [haskell/cabal#6045](https://github.com/haskell/cabal/issues/6045)).
+   Альтернатива: обновиться хотя бы до GHC 8.6.4
+   (либо скачав и переустановив Haskell Platform,
+   либо командой `ghcup install 8.6.5 && ghcup set 8.6.5`).
 1. Используйте команду `hlint`, чтобы получить советы по упрощению кода.
    Например: `hlint src/Map.hs` или `hlint .` (чтобы проверить всю папку).
    Не всем из них, впрочем, надо следовать.
